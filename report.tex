@@ -1,4 +1,4 @@
-\documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,a4paper]{bxjsreport}
+\documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,a4paper,layout=v2]{bxjsreport}
 \usepackage{ifxetex,ifluatex}
 \usepackage{unicode-math}
 \setmainfont[Ligatures=TeX]{TeXGyreTermes}
@@ -10,6 +10,21 @@
 \title{周期ポテンシャルにおける波束の時間発展}
 \begin{document}
     \maketitle
+    \begin{abstract}
+      周期ポテンシャルは一定の周期構造を持つ分子の並びをモデル化したものであり、
+      中でも最も簡単なKronig-Pennyモデルでは定常状態のエネルギーバンド構造を説明することができる。
+      一方で時間に依存した現象では、波束が時間の2乗よりも早く緩和することが知られており、
+      heyperdiffusionと呼ばれている。
+      このような、周期ポテンシャル中の粒子が真空中とは違った振る舞いをすることに関する知見は、
+      固体物理やナノリソグラフィなどの分野に応用できる場合がある。
+      そこで本研究は、特定の(半)周期ポテンシャルにおける波束が
+      どのように緩和していくのかを解析することを目的として、
+      主にコンピュータにおける数値計算的な手法を用いている。
+      その結果Kronig-Penny型の周期ポテンシャルに入射する波束は、
+      ステップ型のポテンシャルに入射した場合と比べて、
+      反射波に遅れが生じることを発見した。
+    \end{abstract}
+    \tableofcontents
     \chapter{研究の目的}
     \section{波束の時間発展}
     \section{周期ポテンシャル}

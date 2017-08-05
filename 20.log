@@ -1,7 +1,7 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2017.8.5)  5 AUG 2017 01:46
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2017.8.5)  5 AUG 2017 01:05
  restricted system commands enabled.
-**/home/taiki/2017SummerReport/report.tex
-(/home/taiki/2017SummerReport/report.tex
+**/tmp/vi3g9zO/20
+(/tmp/vi3g9zO/20
 LaTeX2e <2017-04-15>
 Lua module: luaotfload-main 2017/01/29 2.80001 OpenType layout system.
 Lua module: lualibs 2017-02-01 2.5 ConTeXt Lua standard libraries.
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.116 seconds
+luaotfload | main : initialization completed in 0.115 seconds
 Babel <3.12> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/bxjscls/bxjsreport.cls
 Document Class: bxjsreport 2017/07/07 v1.5d BXJS document classes
@@ -1304,9 +1304,8 @@ File: luatex.def 2017/06/24 v1.0f Graphics/color driver for luatex
 . 
 . I'm going to patch macro \frac.
 .................................................
-
-(./report.aux)
-\openout1 = report.aux
+ (./20.aux)
+\openout1 = 20.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -1446,10 +1445,10 @@ LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [1]
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 23.00687pt on input line 27.
+(Font)              scaled to size 23.00687pt on input line 16.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 23.00687pt on input line 27.
- (./report.toc
+(Font)              scaled to size 23.00687pt on input line 16.
+ (./20.toc
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(1)/m/n' will be
 (Font)              scaled to size 10.00015pt on input line 2.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesMath(1)/m/n' will be
@@ -1469,20 +1468,19 @@ LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
 )
 \tf@toc=\write3
 
-\openout3 = report.toc
-
-[1
+\openout3 = 20.toc
+ [1
 
 ]
 第1章
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 19.17854pt on input line 28.
+(Font)              scaled to size 19.17854pt on input line 17.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 19.17854pt on input line 28.
+(Font)              scaled to size 19.17854pt on input line 17.
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 29.
+(Font)              scaled to size 13.31586pt on input line 18.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 29.
+(Font)              scaled to size 13.31586pt on input line 18.
 [2
 
 ]
@@ -1505,26 +1503,26 @@ LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
 第6章
 [7
 
-] (./report.aux)
+] (./20.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 )
 
 Here is how much of LuaTeX's memory you used:
- 18505 strings out of 494472
+ 18502 strings out of 494472
  125171,662416 words of node,token memory allocated
- 8511 words of node memory still in use:
-   7 hlist, 1 vlist, 4 rule, 3 glue, 124 kern, 3204 attribute, 183 glue_spec, 16
+ 8481 words of node memory still in use:
+   7 hlist, 1 vlist, 4 rule, 3 glue, 124 kern, 3204 attribute, 177 glue_spec, 16
 8 attribute_list, 1 write, 10 user_defined nodes
-   avail lists: 1:23,2:17331,3:104,4:73,5:19,6:796,7:822,8:668,9:90,10:36,11:10
+   avail lists: 1:24,2:9117,3:104,4:73,5:19,6:446,7:454,8:350,9:90,10:19,11:8
  21864 multiletter control sequences out of 65536+600000
- 96 fonts using 70584867 bytes
- 60i,6n,82p,1042b,321s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 96 fonts using 70584943 bytes
+ 60i,6n,82p,1018b,321s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-regular.otf></usr/
 share/texmf/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf></usr/share
 /texlive/texmf-dist/fonts/truetype/public/ipaex/ipaexm.ttf>
-Output written on report.pdf (9 pages, 165763 bytes).
+Output written on 20.pdf (9 pages, 153411 bytes).
 
 PDF statistics: 53 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream
