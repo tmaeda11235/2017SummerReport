@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/W32TeX)  (format=lualatex 2017.8.3)  11 AUG 2017 17:49
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/W32TeX)  (format=lualatex 2017.8.3)  11 AUG 2017 18:31
  restricted system commands enabled.
 **report.tex
 (./report.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.146 seconds
+luaotfload | main : initialization completed in 0.144 seconds
 Babel <3.10> and hyphenation patterns for 1 language(s) loaded.
 (c:/texlive/2017/texmf-dist/tex/latex/bxjscls/bxjsreport.cls
 Document Class: bxjsreport 2017/04/01 v1.5b BXJS document classes
@@ -1013,7 +1013,7 @@ yretermes-italic.luc)(load cache: C:/Users/tmaed/.texlive2017/texmf-var/luatexja
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 . <->"TeXGyreTermes/BI:mode=node;script=latn;language=DFLT;+tlig;+smcp;"
 .................................................
-LaTeX Info: Redefining \rmfamily on input line 4.
+LaTeX Info: Redefining \rmfamily on input line 3.
 (load luc: C:/Users/tmaed/.texlive2017/texmf-var/luatex-cache/generic/fonts/otl/
 texgyreheros-regular.luc)(load cache: C:/Users/tmaed/.texlive2017/texmf-var/luat
 exja/extra_texgyreheros-regular.luc)
@@ -1051,7 +1051,7 @@ a_texgyreheros-italic.luc)
 . - 'bold italic small caps'  (bx/itsc) with NFSS spec.:
 . <->"TeXGyreHeros/BI:mode=node;script=latn;language=DFLT;+tlig;+smcp;"
 .................................................
-LaTeX Info: Redefining \sffamily on input line 5.
+LaTeX Info: Redefining \sffamily on input line 4.
 (load luc: C:/Users/tmaed/.texlive2017/texmf-var/luatex-cache/generic/fonts/otl/
 inconsolatazi4-regular.luc)(load cache: C:/Users/tmaed/.texlive2017/texmf-var/lu
 atexja/extra_inconsolatazi4-regular.luc)
@@ -1098,7 +1098,7 @@ luaotfload | aux : no font with id 40
 . \fontdimen 4\font =0\fontdimen 4\font \fontdimen 7\font =0\fontdimen 2\font
 . \hyphenchar \font =\c_minus_one 
 .................................................
-LaTeX Info: Redefining \ttfamily on input line 6.
+LaTeX Info: Redefining \ttfamily on input line 5.
 
 (c:/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
@@ -1209,31 +1209,72 @@ LaTeX Info: Redefining \] on input line 2818.
 . 
 . I'm going to patch macro \@genfrac.
 .................................................
- (./report.aux)
+ (c:/texlive/2017/texmf-dist/tex/platex/base/ascmac.sty
+Package: ascmac 2016/08/21 v2.0c ascmac wrapper (community edition) 
+
+(c:/texlive/2017/texmf-dist/tex/platex/base/tascmac.sty
+Package: tascmac 2016/08/21 v2.0c ascmac package (community edition) 
+Package tascmac Info: Patch from LuaTeX-ja will be applied on input line 44.
+\@savetbaselineshift=\dimen185
+\@saveybaselineshift=\dimen186
+\scb@x=\box61
+\scscb@x=\box62
+\@bw=\dimen187
+\@nbox=\box63
+\@nbody=\box64
+\@scw=\dimen188
+\@itemh=\dimen189
+\@iboxpos=\toks31
+\@iboxstr=\box65
+\@bwsp=\box66
+\@@bwsp=\box67
+\@bcal=\count178
+\shaderule=\dimen190
+))
+
+Package geometry Warning: Over-specification in `h'-direction.
+    `width' (454.10269pt) is ignored.
+
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (701.39043pt) is ignored.
+
+(./report.aux)
 \openout1 = report.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
-(c:/texlive/2017/texmf-dist/tex/luatex/luatexja/patches/lltjp-fontspec.sty
+(c:/texlive/2017/texmf-dist/tex/luatex/luatexja/patches/lltjp-tascmac.sty
+
+LaTeX Warning: You have requested package `',
+               but the package provides `lltjp-tascmac'.
+
+Package: lltjp-tascmac 2017/05/05 Patch to (t)ascmac for LuaTeX-ja
+{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map})
+(c:/texlive/2017/texmf-dist/tex/luatex/luatexja/patches/lltjp-tascmac.sty
+Package: lltjp-tascmac 2017/05/05 Patch to (t)ascmac for LuaTeX-ja
+
+warning  (map file): entry for 'ascgrp' already exists, duplicates ignored
+) (c:/texlive/2017/texmf-dist/tex/luatex/luatexja/patches/lltjp-fontspec.sty
 Package: lltjp-fontspec 2017/05/05 Patch to fontspec for LuaTeX-ja
 )
 (c:/texlive/2017/texmf-dist/tex/luatex/luatexja/patches/lltjp-unicode-math.sty
@@ -1249,16 +1290,16 @@ Package: lltjp-unicode-math 2017/05/05 Patch to unicode-math for LuaTeX-ja
 * hratio: 1:1
 * vratio: 1:1
 * modes: includehead includefoot 
-* h-part:(L,W,R)=(71.70259pt, 454.10269pt, 71.70259pt)
-* v-part:(T,H,B)=(71.8282pt, 701.39043pt, 71.82822pt)
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(28.45274pt, 802.36774pt, 14.22636pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=453.10944pt
-* \textheight=634.0pt
-* \oddsidemargin=-0.07077pt
-* \evensidemargin=-0.07077pt
-* \topmargin=-5.2045pt
-* \headheight=20.0pt
+* \textwidth=455.24411pt
+* \textheight=745.4519pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-43.81725pt
+* \headheight=10.0pt
 * \headsep=18.45792pt
 * \topskip=10.0pt
 * \footskip=28.45792pt
@@ -1275,19 +1316,19 @@ Package: lltjp-unicode-math 2017/05/05 Patch to unicode-math for LuaTeX-ja
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box61
+\AtBeginShipoutBox=\box68
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 12.
+LaTeX Info: Redefining \selectfont on input line 21.
 (load luc: C:/Users/tmaed/.texlive2017/texmf-var/luatex-cache/generic/fonts/otl/
 latinmodern-math.luc)(load cache: C:/Users/tmaed/.texlive2017/texmf-var/luatexja
 /extra_latinmodern-math.luc)
-\g__fontspec_family_latinmodern-math.otf_int=\count178
-luaotfload | aux : font no 41 (nil) does not define feature smcp for script math
+\g__fontspec_family_latinmodern-math.otf_int=\count179
+luaotfload | aux : font no 42 (nil) does not define feature smcp for script math
  with language dflt
-luaotfload | aux : no font with id 41
-luaotfload | aux : font no 41 (nil) does not define feature smcp for script math
+luaotfload | aux : no font with id 42
+luaotfload | aux : font no 42 (nil) does not define feature smcp for script math
  with language dflt
-luaotfload | aux : no font with id 41
+luaotfload | aux : no font with id 42
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1309,21 +1350,21 @@ nmodern-math.otf]:mode=base;script=math;language=DFLT;+ssty=0;"<-7>"[latinmodern
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 12.
+(Font)              `operators' in the math version `normal' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/latinmodern-math.otf(0)/m/n on input 
-line 12.
+line 21.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 12.
+(Font)              `operators' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/latinmodern-math.otf(0)/bx/n on inpu
-t line 12.
-luaotfload | aux : font no 41 (nil) does not define feature smcp for script math
+t line 21.
+luaotfload | aux : font no 42 (nil) does not define feature smcp for script math
  with language dflt
-luaotfload | aux : no font with id 41
-luaotfload | aux : font no 41 (nil) does not define feature smcp for script math
+luaotfload | aux : no font with id 42
+luaotfload | aux : font no 42 (nil) does not define feature smcp for script math
  with language dflt
-luaotfload | aux : no font with id 41
+luaotfload | aux : no font with id 42
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1373,21 +1414,21 @@ y=0;"<-7>s*[1.00001]"[latinmodern-math.otf]:mode=base;script=math;language=DFLT;
 . 22\font =163840sp\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 12.
+(Font)              `symbols' in the math version `normal' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 12.
+ line 21.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 12.
+(Font)              `symbols' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/latinmodern-math.otf(1)/bx/n on inpu
-t line 12.
-luaotfload | aux : font no 41 (nil) does not define feature smcp for script math
+t line 21.
+luaotfload | aux : font no 42 (nil) does not define feature smcp for script math
  with language dflt
-luaotfload | aux : no font with id 41
-luaotfload | aux : font no 41 (nil) does not define feature smcp for script math
+luaotfload | aux : no font with id 42
+luaotfload | aux : font no 42 (nil) does not define feature smcp for script math
  with language dflt
-luaotfload | aux : no font with id 41
+luaotfload | aux : no font with id 42
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -1422,30 +1463,30 @@ y=0;"<-7>s*[0.99999]"[latinmodern-math.otf]:mode=base;script=math;language=DFLT;
 . \fontdimen 12\font =393216sp\relax \fontdimen 13\font =0pt\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 12
+(Font)              `largesymbols' in the math version `normal' on input line 21
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(2)/m/n on input
- line 12.
+ line 21.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 12.
+(Font)              `largesymbols' in the math version `bold' on input line 21.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(2)/bx/n on inpu
-t line 12.
+t line 21.
 
 (c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count179
-\scratchdimen=\dimen185
-\scratchbox=\box62
-\nofMPsegments=\count180
-\nofMParguments=\count181
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count182
-\MPscratchDim=\dimen186
-\MPnumerator=\count183
-\makeMPintoPDFobject=\count184
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count180
+\scratchdimen=\dimen191
+\scratchbox=\box69
+\nofMPsegments=\count181
+\nofMParguments=\count182
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count183
+\MPscratchDim=\dimen192
+\MPnumerator=\count184
+\makeMPintoPDFobject=\count185
+\everyMPtoPDFconversion=\toks33
 ) (c:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1476,36 +1517,37 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 15.97903pt on input line 13.
+(Font)              scaled to size 15.97903pt on input line 22.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 15.97903pt on input line 13.
+(Font)              scaled to size 15.97903pt on input line 22.
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 13.
+(Font)              scaled to size 11.09656pt on input line 22.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 11.09656pt on input line 13.
+(Font)              scaled to size 11.09656pt on input line 22.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.00018pt on input line 13.
+(Font)              scaled to size 12.00018pt on input line 22.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 13.
+(Font)              scaled to size 8.00012pt on input line 22.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 13.
+(Font)              scaled to size 6.00009pt on input line 22.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 11.99982pt on input line 13.
+(Font)              scaled to size 11.99982pt on input line 22.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 13.
+(Font)              scaled to size 7.99988pt on input line 22.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 13.
+(Font)              scaled to size 5.99991pt on input line 22.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 7.3977pt on input line 13.
+(Font)              scaled to size 7.3977pt on input line 22.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 5.54828pt on input line 13.
+(Font)              scaled to size 5.54828pt on input line 22.
  [1
 
-{c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1]
+]
+[1]
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 23.00687pt on input line 28.
+(Font)              scaled to size 23.00687pt on input line 37.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 23.00687pt on input line 28.
+(Font)              scaled to size 23.00687pt on input line 37.
  (./report.toc
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
 (Font)              scaled to size 10.00015pt on input line 2.
@@ -1527,40 +1569,39 @@ LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
 \tf@toc=\write3
 
 \openout3 = report.toc
-
-[1
+ [1
 
 ]
 第1章
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 19.17854pt on input line 29.
+(Font)              scaled to size 19.17854pt on input line 38.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 19.17854pt on input line 29.
+(Font)              scaled to size 19.17854pt on input line 38.
 LaTeX Font Info:    Font shape `JT3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 39.
+(Font)              scaled to size 13.31586pt on input line 48.
 LaTeX Font Info:    Font shape `JY3/IPAexMincho(0)/m/n' will be
-(Font)              scaled to size 13.31586pt on input line 39.
+(Font)              scaled to size 13.31586pt on input line 48.
 [2
 
-] [3] [4]
+] [3]
 第2章
-[5
+[4
 
 ]
 第3章
-[6
+[5
 
 ]
 第4章
-[7
+[6
 
 ]
 第5章
-[8
+[7
 
 ]
 第6章
-[9
+[8
 
 ] (./report.aux)
 
@@ -1569,24 +1610,25 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 )
 
 Here is how much of LuaTeX's memory you used:
- 18517 strings out of 494481
- 305615,662416 words of node,token memory allocated
- 10542 words of node memory still in use:
-   10 hlist, 2 vlist, 5 rule, 20 glue, 125 kern, 3666 attribute, 358 glue_spec, 
-192 attribute_list, 1 write, 14 user_defined nodes
-   avail lists: 1:35,2:83794,3:280,4:110,5:19,6:3428,7:3496,8:2797,9:285,10:36,1
-1:18
- 21735 multiletter control sequences out of 65536+600000
- 89 fonts using 47439471 bytes
- 60i,6n,82p,1013b,317s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 18609 strings out of 494481
+ 305606,662416 words of node,token memory allocated
+ 10845 words of node memory still in use:
+   11 hlist, 2 vlist, 5 rule, 20 glue, 127 kern, 3794 attribute, 360 glue_spec, 
+199 attribute_list, 1 write, 15 user_defined nodes
+   avail lists: 1:51,2:80000,3:290,4:125,5:19,6:3506,7:3575,8:2820,9:352,10:29,1
+1:20
+ 21798 multiletter control sequences out of 65536+600000
+ 90 fonts using 47470971 bytes
+ 60i,10n,82p,1026b,317s stack positions out of 5000i,500n,10000p,200000b,100000s
 <c:/texlive/2017/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><
 c:/texlive/2017/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c
-:/texlive/2017/texmf-dist/fonts/opentype/public/tex-gyre/texgyreheros-regular.ot
-f><c:/texlive/2017/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regul
-ar.otf><c:/texlive/2017/texmf-dist/fonts/truetype/public/ipaex/ipaexm.ttf>
-Output written on report.pdf (11 pages, 266075 bytes).
+:/texlive/2017/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:
+/texlive/2017/texmf-dist/fonts/opentype/public/tex-gyre/texgyreheros-regular.otf
+><c:/texlive/2017/texmf-dist/fonts/opentype/public/tex-gyre/texgyretermes-regula
+r.otf><c:/texlive/2017/texmf-dist/fonts/truetype/public/ipaex/ipaexm.ttf>
+Output written on report.pdf (10 pages, 270134 bytes).
 
-PDF statistics: 75 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 77 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
