@@ -1,12 +1,21 @@
 \documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,a4paper,layout=v2]{bxjsreport}
-\usepackage{ifxetex,ifluatex}
-\usepackage{unicode-math}
+\usepackage{ifxetex,ifluatex,unicode-math}
 \setmainfont[Ligatures=TeX]{TeXGyreTermes}
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
 \setmonofont{Inconsolatazi4}
-\usepackage{graphicx}
-\usepackage{braket}
-\usepackage{amsmath}
+\usepackage{graphicx,braket, amsmath, ascmac}
+\geometry{top= 10truemm, bottom= 5 truemm, left= 25truemm, right= 25truemm}
+\makeatletter
+\newcommand{\Tref}[1]{Tab.~\ref{#1}}
+\newcommand{\Eref}[1]{eq.~(\ref{#1})}
+\newcommand{\Fref}[1]{fig.~\ref{#1}}
+\renewcommand{\theequation}{
+    \thesection.\arabic{equation}}
+\@addtoreset{equation}{chapter}
+\def\theequation{\thechapter.\arabic{equation}}
+\def\@cite#1{\textsuperscript{#1)}}
+\makeatother
+
 \author{前田大輝}
 \title{周期ポテンシャルにおける波束の時間発展}
 \begin{document}
@@ -54,8 +63,10 @@
     中でも数値解析法は特別な条件を系に課す必要がないため、主要な解析法として用いることができる。
     数値的にSchrődinger方程式を解く方法には大きくFFT法と有限要素法が存在する。
     \subsection{FFT法}
-    FFT法は固有状態の重ね合わせによって系の初期状態を構成し、時間発展を追う方法である。
-    %固有値の重ね合わせの式
+    FFT法はハミルトニアンの固有状態を重ね合わせることによって系の初期状態を構成し、時間発展を追う方法である。
+    \begin{align}
+        \psi(x,t)=\sum_{\mathrm{n}}^{\infty}C_{\mathrm{n}}\ \phi_{n}(x)\ \mathrm{e}^{-\frac{i}{\hbar}\varepsilon_n t}
+    \end{align}
     適当な$C_{n}$を与えれば、その後の時間発展を位相をずらすだけで表現できる。
     この方法では固有状態がわかってしまえば比較的短い計算でも高い精度で計算することができる。
     誤差は主にフーリエ変換の連続的な積分を離散的な和で表すことによって発生する。
@@ -97,12 +108,12 @@
     そこで、安定域の広い予測子修正子Adams法を用いることにする。
     \chapter{先行研究}
     \begin{chapterabstract}
-    Kronig-Pennyモデルは、Blochの定理を適用可能な実例として提案された。
-    箱型ポテンシャルが周期的に並んでいる状況を設定したモデルで、
-    KronigとPennyはこのモデルの固有状態を計算することによって、
-    周期ポテンシャルにエネルギーバンド構造が現れることを説明した。
-    Kronig-Pennyモデル中の波束の時間発展については、Zhenjunによる数値計算が行われている。
-    この中で、重心が止まった波束の緩和速度について、分散の時間発展を使うことで数値化が行われた。
+        Kronig-Pennyモデルは、Blochの定理を適用可能な実例として提案された。
+        箱型ポテンシャルが周期的に並んでいる状況を設定したモデルで、
+        KronigとPennyはこのモデルの固有状態を計算することによって、
+        周期ポテンシャルにエネルギーバンド構造が現れることを説明した。
+        Kronig-Pennyモデル中の波束の時間発展については、Zhenjunによる数値計算が行われている。
+        この中で、重心が止まった波束の緩和速度について、分散の時間発展を使うことで数値化が行われた。
     \end{chapterabstract}
     \section{Blochの定理とKronig-Pennyモデルの定常解}
     ハミルトニアンに並進対称性を与えると定常状態の波動関数が周期関数と三角関数の積で表せるというものがBlochの定理の内容である。
