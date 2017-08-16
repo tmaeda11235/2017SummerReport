@@ -4,11 +4,12 @@
 \setmainfont[Ligatures=TeX]{TeXGyreTermes}
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
 \setmonofont{Inconsolatazi4}
-\usepackage{graphicx, braket, amsmath, cite, ascmac, amsfonts}
+\usepackage{graphicx, amsmath, cite, ascmac, amsfonts}
+
 \makeatletter
 \newcommand{\tref}[1]{Table.~\ref{#1}}
 \newcommand{\eref}[1]{Eq.~(\ref{#1})}
-\newcommand{\gref}[1]{Fig.~\ref{#1}}
+\newcommand{\fref}[1]{Fig.~\ref{#1}}
 \renewcommand{\theequation}{
   \thesection.\arabic{equation}}
 \@addtoreset{equation}{chapter}
@@ -97,10 +98,10 @@
     周期ポテンシャル中の波動関数が従う一般的な形式\eref{BlochTheorem}を求めた。
     \begin{itembox}[l]{Blochの定理}
       \begin{align}
-        \phi(x) = u(x) \mathrm{e}^{-K x} \label{BlochTheorem}
+        \phi(x) = u(x) \mathrm{e}^{-k x} \label{BlochTheorem}
       \end{align}
     \end{itembox}
-    $K$は逆格子ベクトルと呼ばれる結晶の周期に依存する定数、$u(x)$は結晶と同じ周期をもつ関数で結晶構造に依存する。
+    $k$は逆格子ベクトルと呼ばれる結晶の周期に依存する定数、$u(x)$は結晶と同じ周期をもつ関数で結晶構造に依存する。
     周期ポテンシャル中の波動関数が\eref{BlochTheorem}に従うという定理をBlochの定理と呼ぶ。\par
     この定理を使って、KronigとPennyはポテンシャルが\eref{defKP}のように表される場合に、
     エネルギーバンド構造が形成されることを説明した。
@@ -120,8 +121,8 @@
     簡単な構造ながらエネルギーバンド構造を説明することができる点で有効であり、Kronig-Pennyモデルと呼ばれる。\par
     また、定常状態についての構造は古くから知られているKronig-Pennyポテンシャルだが、
     非定常状態はBlochの定理が成立しないため、波動関数が\eref{BlochTheorem}で表されることはない。
-    これに関しては、ZenjunによってGauss型波束の緩和についての研究\footnote{
-      Zenjunのポテンシャルは$x=0$付近だけ井戸の間隔が広くなっている
+    これに関しては、Hunagel、ZenjunによってGauss型波束の緩和についての研究\footnote{
+      Zhanのポテンシャルは$x=0$付近だけ井戸の間隔が広くなっている
     }が行われている。
     この結果、波束の標準偏差が時間に比例するよりも早く大きくなる現象が見出され、Heyperdiffusionが起こることを示した。\par
     このように、物質中の波束や真空中の波束についてはある程度の知見が得られているが、
@@ -490,8 +491,7 @@
     この漸化式は2段2次のAdams-Bashforth法\footnote{
       2つの過去の値を使っているので2段、Taylor展開の2次までと一致するので2次のAdams-bashfourth法と呼ばれる。
       こちらもあまり聞かないが、Euler法は1段1次のAdams-bashfourth法ということもできる。\\
-      また、Runge-Kutta法の階数と同じように段数と次数も一般に一致しない。
-      経験的に7次の公式を作るためには最低でも8段が必要になることが知られている。
+      また、Runge-Kutta法の階数とは違い、線形多段法の段数は次数と必ず一致する。
     }と呼ばれる。
     \begin{itembox}[l]{Adams-Bashforth法}
     \begin{align}
@@ -549,14 +549,22 @@
     箱型ポテンシャルが周期的に並んでいる状況を設定したモデルで、
     KronigとPennyはこのモデルの固有状態を計算することによって、
     周期ポテンシャルにエネルギーバンド構造が現れることを説明した。
-    Kronig-Pennyモデル中の波束の時間発展については、Zhenjunによる数値計算が行われている。
+    Kronig-Pennyモデル中の波束の時間発展については、Zhanによる数値計算が行われている。
     この中で、重心が止まった波束の緩和速度について、分散の時間発展を使うことで数値化が行われた。
     \end{chapterabstract}
     \section{Blochの定理とKronig-Pennyモデルの定常解}
-    ハミルトニアンに並進対称性を与えると
-    定常状態の波動関数が周期関数と三角関数の積で表せるというものがBlochの定理\eref{BlochTheorem}の内容である。
-    これを今から証明する。\par
-    まず、証明のために演算子の交換関係についての有用な定理を証明する。
+    \subsection{Blochの定理}
+    周期ポテンシャルの扱い方はBlochの定理を基礎にして作られている。
+    ハミルトニアンに並進対称性を与える\footnote{
+    一般にハミルトニアンに対称性を与えると何らかの保存量が定義できる。\\
+    今回のような離散的な並進変換の場合は逆格子ベクトルが保存する。\\
+    ちなみに連続的な並進変換(微小量だけ平行移動させる操作)の対称性を与えると運動量が保存する。\\
+    つまり、逆格子ベクトルは運動量や波数を離散的な変換に拡張した概念だといえる。
+    }と
+    定常状態の波動関数が周期関数と平面波の積で表せるというものがBlochの定理\eref{BlochTheorem}の内容である。
+    並進対称性とは波動関数全体を平行移動させる演算子$T$とハミルトニアン$H$が交換することをいう。
+    交換関係とBlochの定理がどのように繋がるのかを説明する。\par
+    まず、Blochに証明のために演算子の交換関係についての補助的な定理を証明する。
     \begin{itembox}[l]{交換関係に関する定理}
       あるHermit演算子$A$、$B$が交換関係$[A,\:B]=0$を満たすとき$A$、$B$は同時固有状態を持つ。
     \end{itembox}
@@ -565,10 +573,11 @@
     \begin{align}
       AB\phi_\alpha&=BA\phi_\alpha \nonumber\\
       AB\phi_\alpha&=B\alpha\phi_\alpha \nonumber\\
-      AB\phi_\alpha&=\alpha B\phi_\alpha \label{commutationi1}
+      AB\phi_\alpha&=\alpha B\phi_\alpha \label{commutation1}
     \end{align}
-    \eref{commutation}から、$B\phi_\alpha$は$A$の$\alpha$に対する固有関数になっていることがわかる。
-    $A$の固有状態に縮退がないとすると、$\alpha$と$\phi_\alpha$は定数倍を除いて一対一対応するので、$B\phi_\alpha$は$\phi_\alpha$の定数倍以外ありえない。
+    \eref{commutation1}から、$B\phi_\alpha$は$A$の$\alpha$に対する固有関数になっていることがわかる。
+    $A$の固有状態に縮退がないとすると、$\alpha$と$\phi_\alpha$は定数倍を除いて一対一対応するので、
+    $B\phi_\alpha$は$\phi_\alpha$の定数倍以外ありえない。
     よって比例定数を$\beta$とすれば、\eref{commutation2}が成立するが、
     これは$\phi_\alpha$が$B$の固有関数であることを意味している。
     \begin{align}
@@ -577,14 +586,281 @@
     また、$A$の固有状態に縮退がある場合、他の固有状態を$\phi'_\alpha$とすると\footnote{
       $\phi'_\alpha$以外にも$\phi''_\alpha$や$\phi'''_\alpha$があっても構わないが、簡単のために一つだけの場合を考える。
     }
-    $B\phi_\alpha$は$\phi_\alpha$と$\phi'_\alpha$との線型結合で表される。適当な係数を$\beta_1$、$\beta_2$とすれば\eref{commutation3}が成立する。\begin{align}
-      B\phi_\alpha &= \beta_1\phi_\alpha + \beta_2\phi'_\alpha\\
-      B\phi'_\alpha &= \beta'_1\phi_\alpha + \beta'_2\phi_\alpha
+    $B\phi_\alpha$は$\phi_\alpha$と$\phi'_\alpha$との線型結合で表される。
+    適当な係数を$\beta_1$、$\beta_2$、$\beta'_1$、$\beta'_2$とすれば\eref{commutation3}が成立する。\begin{align}
+      B\phi_\alpha &= \beta_1\phi_\alpha + \beta_2\phi'_\alpha\nonumber\\
+      B\phi'_\alpha &= \beta'_1\phi_\alpha + \beta'_2\phi_\alpha\nonumber\\
+      B\begin{pmatrix}
+      \phi_\alpha\\
+      \phi'_\alpha
+      \end{pmatrix}&=
+      \begin{pmatrix}
+      \beta_1 &\beta_2\\
+      \beta'_1 & \beta'_2
+      \end{pmatrix}
+      \begin{pmatrix}
+      \phi_\alpha\\
+      \phi'_\alpha
+      \end{pmatrix}\label{commutation3}
     \end{align}
-    ここで、$\phi_\alpha+\beta_2/\beta_1\phi'_\alpha$の因子は$B$の$beta_1$に対する固有関数であることがわかる。
-    また、$\phi_\alpha$と$\phi'_\alpha$の線型結合で表されることから、$A$の$\alpha$に対する固有関数であることもわかる。
-    $A$に縮退がある場合もない場合も$A$と$B$は同時固有関数を持つことがわかったため、定理は証明された。
-    \section{Zenjunの超拡散}
+    \eref{commutation3}右辺の行列を対角化するようなUnitary変換\footnote{
+        $\phi_\alpha$と$\phi'_\alpha$を基底にした座標変換を複素数の範囲まで一般化した変換のこと。\\
+        要は$\phi_\alpha$たちに適当な複素数をかけて足し合わせる操作をする。
+        ただし、Hermit共役をとったときに自分自身の逆変換となっていなくてはならない。
+        こうしておくとUnitary変換した状態$\phi'=U\phi$はHermit共役をとったとき$\phi^*U^\dagger=\phi^*U^{-1}$
+        となって、以下のように内積が保存する。
+        \begin{align}
+        \int\phi'^*\phi\:dx=\int(U\phi)^*\:(U\phi)\:dx=\int\phi^*U^{-1}U\phi\:dx=\int\phi^*\phi\:dx\nonumber
+        \end{align}
+    }を行えば、
+    $B$の固有関数となる$\phi_\alpha$と$\phi'_\alpha$の線形結合が得られる。
+    よって、$A$に縮退がある場合も$A$と$B$の同時固有関数を持つことがわかったため、定理は証明された。\par
+    それでは、この定理を使ってBlochの定理\eref{BlochTheorem}を証明する。
+    まず、波動関数を$d$ずらす並進演算子$K_d$とハミルトニアン$H$の間に並進対称性\eref{sym}が成立していると仮定\footnote{
+    ハミルトニアンの運動エネルギー部分$-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}$は並進対称性を持っているため、
+    ポテンシャルが並進対称性を持っていればハミルトニアン全体も並進対称性を持つと考えて良い。\\
+    逆にポテンシャルに並進対称性がない場合はハミルトニアン全体に並進対称性を持たせることができないので、
+    この仮定はポテンシャルに並進対称性を課していることに等価である。
+}する。
+    \begin{align}
+    [K_d,H]=0\label{sym}
+    \end{align}
+    これによってエネルギー固有状態$\phi_n(x)$は$K_d$の固有関数になる。
+    その固有値を$\kappa$とすると、$K^m(d)$の固有値は$\kappa^m$となるため\eref{powK1}が成立する。
+    \begin{align}
+    K^m\phi_n(x)=\kappa^m\phi_n(x)\label{powK1}
+    \end{align}
+    一方、$K_d$の定義から、\eref{powK2}が成立する。
+    \begin{align}
+    K^m(d)\phi_n(x)=\phi_n(x-md)\label{powK2}
+    \end{align}
+    $\phi(x)=\phi(x-md)$となるように周期境界条件を付けることで、\eref{powK1}と\eref{powK2}から\eref{preBlo}が成立する。
+    \begin{align}
+    \kappa^m\phi_n(x)=\phi_n(x)\nonumber\\
+    \kappa^m = 1\nonumber\\
+    \kappa = \mathrm{e}^{i\frac{2\pi}{m}}\label{preBlo}
+    \end{align}
+    よって、$\phi_n(x)$は並進操作によって位相が$2\pi/m$だけずれることがわかる。
+    逆に、$\phi_n(x)$から位相が周期的にずれる関数\eref{tunedphi}を考えると、\eref{preBlo2}がいえる。
+    \begin{align}
+    u(x) &= \mathrm{e}^{ikx}\phi_n(x)\label{tunedphi}\\
+    K_du(x) &= \mathrm{e}^{ik(x-d)}\mathrm{e}^{i\frac{2\pi}{m}}\phi_n(x)\nonumber\\
+    K_du(x) &= \mathrm{e}^{i\left(\frac{2\pi}{m}-kd\right)}\mathrm{e}^{ikx}\phi_n(x)\nonumber\\
+    K_du(x) &= \mathrm{e}^{i\left(\frac{2\pi}{m}-kd\right)}u(x)\label{preBlo2}
+    \end{align}
+    よって$k=2\pi/md$となるような変調がかかった$\phi_n$(x)は、\eref{preBlo2}の右辺で最初の因子が1となることから、
+    周期$d$を持つ周期関数であることがわかる。\par
+    \eref{tunedphi}を$\phi_n(x)$について解いたものはBlochの定理に他ならない。
+    \begin{itembox}[l]{Blochの定理(再出)}
+        並進対称なハミルトニアンの固有関数$\phi_n$は並進移動距離と同じ周期を持つ関数$u(x)$を用いて、以下のように書ける。
+        \begin{align}
+        \phi_n(x)=u(x)\mathrm{e}^{-ikx}\\
+        k=\frac{2\pi}{md}\quad(m \in \mathbf{Z})
+        \end{align}
+    \end{itembox}
+    \subsection{Kronig-Pennyモデルの定常解}
+    Blochの定理を使って、Kronig-Pennyモデルの具体的な解を求めてみる。
+    Kronig-Pennyポテンシャルは大きく三つのパラメータが存在するが、
+    今回はSzmulowiczにならって、\eref{KPparam}のようにパラメータをし直す。
+    井戸\footnote{
+    ここでポテンシャルが$V_{KP}$の領域を壁と呼び、ポテンシャルが$0$の領域を井戸と呼ぶことにする。
+    }の中心が原点へ来るように平行移動しただけで、結果に影響はない。
+    \begin{align}
+    V_{KP}(x)=\begin{cases}
+    V_{KP}&(-b<x<b)\\
+    0&(b<x<b+2a)\\
+    V_{KP}(x-d)&(otherwise)
+    \end{cases}\label{KPparam}
+    \end{align}
+     このとき、ポテンシャルの周期$d$は以下の\eref{period}で表される。
+    \begin{align}
+    d=2a+2b\label{period}
+    \end{align}
+    定常状態の波動関数は平面波の形になるため、エネルギーを$E$とすると
+    \eref{wav1}、\eref{wav2}、\eref{wavnum1}、\eref{wavnum2}が成立する。
+    \begin{align}
+    \phi(x)&=A'\mathrm{e}^{ik_Ax}+B'\mathrm{e}^{-ik_Ax}\quad(井戸)\label{wav1}\\
+    \phi(x)&=C'\mathrm{e}^{ik_Bx}+D'\mathrm{e}^{-ik_Bx}\quad(壁)\label{wav2}\\
+    k_\mathrm{A}&=\sqrt{\frac{2mE}{\hbar^2}}\label{wavnum1}\\
+    k_\mathrm{B}&=\sqrt{\frac{2m(E-V_{KP})}{\hbar^2}}\label{wavnum2}
+    \end{align}
+   \eref{wavnum2}の中身は実数の場合も虚数の場合もあるが、どちらの場合でも\eref{wav2}は成立する。
+    $\phi(x)$とその一回微分の連続性を考えると、\eref{wav1}、\eref{wav2}とその導関数は連続関数なので、
+    連続性が自明ではないのは$x=\pm b$の場合だけである。
+    そこで以下のような条件が付く。
+    \begin{align}
+    \mathrm{e}^{ik_Ab}A'+\mathrm{e}^{-ik_Ab}B'-\mathrm{e}^{ik_Bb}C'-\mathrm{e}^{-ik_Bb}D'&=0\label{cc1}\\
+    k_A\mathrm{e}^{ik_Ab}A'-k_A\mathrm{e}^{-ik_Ab}B'-k_B\mathrm{e}^{ik_Bb}C'+k_B\mathrm{e}^{-ik_Bb}D'&=0\label{cc2}\\
+    \mathrm{e}^{-ik_Ab}A'+\mathrm{e}^{ik_Ab}B'-\mathrm{e}^{-ik_Bb}C'-\mathrm{e}^{ik_Bb}D'&=0\label{cc3}\\
+    k_A\mathrm{e}^{-ik_Ab}A'-k_A\mathrm{e}^{ik_Ab}B'-k_B\mathrm{e}^{-ik_Bb} C'+k_B\mathrm{e}^{ik_Bb}D'&=0\label{cc4}
+    \end{align}
+    \eref{cc3}と\eref{cc4}の第一項目と二項目にBlochの定理を使うと、\eref{cc5}\eref{cc6}が得られる。
+    \begin{align}
+    \mathrm{e}^{ik_A(d-b)-iKd}A'+\mathrm{e}^{-ik_A(d-b)-iKd}B'-\mathrm{e}^{-ik_Bb}C'-\mathrm{e}^{ik_Bb}D'&=0\label{cc5}\\
+    k_A\mathrm{e}^{ik_A(d-b)-iKd}A'-k_A\mathrm{e}^{-ik_A(d-b)-iKd}B'-k_B\mathrm{e}^{-ik_Bb}C'+k_B\mathrm{e}^{ik_Bb}D'&=0\label{cc6}
+    \end{align}
+    よって、\eref{cc1}、\eref{cc2}、\eref{cc5}、\eref{cc6}をまとめることで、以下の行列方程式を作ることができる。
+    \begin{align}
+    \begin{pmatrix}
+    \mathrm{e}^{ik_Ab}&\mathrm{e}^{-ik_Ab}&-\mathrm{e}^{ik_Bb}&-\mathrm{e}^{-ik_Bb}\\
+    k_A\mathrm{e}^{ik_Ab}&-k_A\mathrm{e}^{-ik_Ab}&-k_B\mathrm{e}^{ik_Bb}&k_B\mathrm{e}^{-ik_Bb}\\
+    \mathrm{e}^{ik_A(d-b)-iKd}&\mathrm{e}^{-ik_A(d-b)-iKd}&-\mathrm{e}^{-ik_Bb}&-\mathrm{e}^{ik_Bb}\\
+    k_A\mathrm{e}^{ik_A(d-b)-iKd}&-k_A\mathrm{e}^{-ik_A(d-b)-iKd}&-k_B\mathrm{e}^{-ik_Bb}&k_B\mathrm{e}^{ik_Bb}
+    \end{pmatrix}
+    \begin{pmatrix}
+    A'\\
+    B'\\
+    C'\\
+    D'
+    \end{pmatrix}=0
+    \end{align}
+    この式が成立するためには、$A',B',C',D'$が0になるか、行列部分の行列式が0になるかのどちらかとなる。
+    前者には物理的意味が乏しいので、後者を求めることにする。
+    地道に計算すれば求めることができるが、中でも比較的手順が少なく、意味をとりやすい方法として、$2\times2$の行列式に余因子展開する方法を紹介する。\par
+    まず、煩雑を避けるために以下の置き換えをする。
+    \begin{align}
+    \mathrm{e}^{ik_Ab}&=A^+\nonumber\\
+    \mathrm{e}^{-ik_Ab}&=A^-\nonumber\\
+    \mathrm{e}^{ik_Bb}&=B^+\nonumber\\
+    \mathrm{e}^{-ik_Bb}&=B^-\nonumber\\
+    \mathrm{e}^{ik_A(d-b)-iKd}&=A^{+\sim}\nonumber\\
+    \mathrm{e}^{-ik_A(d-b)-iKd}&=A^{-\sim}\nonumber
+    \end{align}
+    このようにまとめると$A$で表される因子と$B$で表される因子同士の積が出てこないように整理できる。
+    また、$A$に関しては同じ符号が肩に乗るもの同士の積も出てこない。
+    よって、以下の積の結果があれば十分である。
+    \begin{align}
+    A^+A^-&=1\nonumber\\
+    B^+B^-&=1\nonumber\\
+    A^+A^{-\sim}&=\mathrm{e}^{-iKd}\mathrm{e}^{-2ik_Aa}\nonumber\\
+    A^{+\sim}A^-&=\mathrm{e}^{-iKd}\mathrm{e}^{2ik_Aa}\nonumber\\
+    A^{+\sim}A^{-\sim}&=\mathrm{e}^{-2iKd}\nonumber\\
+    B^\pm B^\pm &= \mathrm{e}^{\pm 2ik_Bb}
+    \end{align}
+    置き換えを施した行列式を$A^+A^{+\sim}A^-A^{-\sim}$に依存する部分と$B^+B^-$に依存する部分に分けながら余因子展開すると以下のようになる。
+    \begin{align}
+    \begin{Vmatrix}
+    A^+&A^-&-B^+&-B^-\\
+    k_AA^+&-k_AA^-&-k_BB^+&k_BB^-\\
+    A^{+\sim}&A^{-\sim}&-B^-&-B^+\\
+    k_AA^{+\sim}&-k_AA^{-\sim}&-k_BB^-&k_BB^+
+    \end{Vmatrix}&=\nonumber\\
+    \begin{Vmatrix}
+    A^+&A^-\\
+    k_AA^+&-k_AA^-
+    \end{Vmatrix}&
+    \begin{Vmatrix}
+    -B^-&-B^+\\
+    -k_BB^-&k_BB^+
+    \end{Vmatrix}-
+    \begin{Vmatrix}
+    A^+&A^-\\
+    A^{+\sim}&A^{-\sim}
+    \end{Vmatrix}
+    \begin{Vmatrix}
+    -k_BB^+&k_BB^-\\
+    -k_BB^-&k_BB^+
+    \end{Vmatrix}\nonumber\\+
+    \begin{Vmatrix}
+    A^+&A^-\\
+    k_AA^{+\sim}&-k_AA^{-\sim}
+    \end{Vmatrix}&
+    \begin{Vmatrix}
+    -k_BB^+&k_BB^-\\
+    -B^-&-B^+
+    \end{Vmatrix}+
+    \begin{Vmatrix}
+    k_AA^+&-k_AA^-\\
+    A^{+\sim}&A^{-\sim}
+    \end{Vmatrix}
+    \begin{Vmatrix}
+    -B^+&-B^-\\
+    -k_BB^-&k_BB^+
+    \end{Vmatrix}\nonumber\\-
+    \begin{Vmatrix}
+    k_AA^+&-k_AA^-\\
+    k_AA^{+\sim}&-k_AA^{-\sim}
+    \end{Vmatrix}&
+    \begin{Vmatrix}
+    -B^+&-B^-\\
+    -B^-&-B^+
+    \end{Vmatrix}+
+    \begin{Vmatrix}
+    A^{+\sim}&A^{-\sim}\\
+    k_AA^{+\sim}&-k_AA^{-\sim}
+    \end{Vmatrix}
+    \begin{Vmatrix}
+    -B^+&-B^-\\
+    -k_BB^+&k_BB^-
+    \end{Vmatrix}
+    \end{align}
+    $2\times2$の行列式を積の対応関係に気を付けながら展開すると以下のようになる。
+    \begin{align}
+    -4k_Ak_B&-k_A^2\mathrm{e}^{-iKd}(\mathrm{e}^{2ik_Aa}-\mathrm{e}^{-2ik_Aa})(\mathrm{e}^{2ik_Bb}-\mathrm{e}^{-2ik_Bb})&\nonumber\\
+    &+k_Ak_B\mathrm{e}^{-iKd}(\mathrm{e}^{2ik_Aa}+\mathrm{e}^{-2ik_Aa})(\mathrm{e}^{2ik_Bb}+\mathrm{e}^{-2ik_Bb})&\nonumber\\
+    &+k_Ak_B\mathrm{e}^{-iKd}(\mathrm{e}^{2ik_Aa}+\mathrm{e}^{-2ik_Aa})(\mathrm{e}^{2ik_Bb}+\mathrm{e}^{-2ik_Bb})&\nonumber\\
+    &-k_B^2\mathrm{e}^{-iKd}(\mathrm{e}^{2ik_Aa}-\mathrm{e}^{-2ik_Aa})(\mathrm{e}^{2ik_Bb}-\mathrm{e}^{-2ik_Bb})&\nonumber\\
+    &-4k_Ak_B\mathrm{e}^{-2iKd}=0&
+    \end{align}
+    両辺に$\mathrm{e}^{Kd}$を掛けてKdに依存する部分と依存しない部分とを分けると以下のようになる。
+    \begin{align}
+    \frac{\mathrm{e}^{iKd}+\mathrm{e}^{-iKd}}{2}&=\nonumber\\
+    &\frac{1}{2}\left(\frac{k_A}{k_B}+\frac{k_B}{k_A}\right)\frac{\mathrm{e}^{2ik_Aa}-\mathrm{e}^{-2ik_Aa}}{2i}\frac{\mathrm{e}^{2ik_Bb}-\mathrm{e}^{-2ik_Bb}}{2i}\nonumber\\
+    &+\frac{\mathrm{e}^{2ik_Aa}+\mathrm{e}^{-2ik_Aa}}{2}\frac{\mathrm{e}^{2ik_Bb}+\mathrm{e}^{-2ik_Bb}}{2}\nonumber\\
+    \mathrm{cos} Kd=&\frac{1}{2}\left(\frac{k_A}{k_B}+\frac{k_B}{k_A}\right)\mathrm{sin} 2k_Aa\mathrm{sin} 2k_Bb+\mathrm{cos} 2k_Aa\mathrm{cos} 2k_Bb\label{DET} 
+    \end{align}
+    \eref{DET}はKronigとPennyによって導出されたもので、Kronig-Penny問題の主要な成果とされる。
+    \eref{DET}の右辺はエネルギーに依存し、左辺の値域と一致する必要があるため、系がとりうるエネルギーを判別する式となる。\par
+    このときの、一つのエネルギーバンドをとる波数の領域をBrillouinゾーン(Brillouin Zone;BZ)という。
+    解が存在する場合のエネルギーに対応する$K_A,k_B$を使えば、固有状態を求めることができる。
+    \newpage
+    しかし、これは極限的な状況以外では計算することが難しい。
+    なぜなら、解析的手段を使って解くことができないからである。
+    数値的手段を使おうとすると\eref{DET}の右辺は非常に大きな値を返す。
+    \eref{DET}の右辺をエネルギー判別式として$k_A$に対してプロットすると\fref{BZ1}のように$10^8$程度の大きさが得られる。
+    これの-1から1周辺の範囲を拡大すると\fref{BZ2}のように非常に急な傾き現れ、解を手に入れることは極めて難しくなる。
+    \begin{figure}[h]
+     \begin{tabular}{cc}
+         \begin{minipage}[t]{0.45\hsize}
+             \centering
+             \includegraphics[width=70truemm]{figure_2.png}
+             \caption{$k_A$における$V_{KP},a=5,b=1$の判別式}
+             \label{BZ1}
+             \footnotesize{
+              単位は全て原子単位系。エネルギーはHartreeのエネルギーを単位にしている。
+             1Hartreeは水素原子に束縛された電子の古典的なエネルギーに等しい。
+             このセットアップは3$\mathrm{\AA}$ 程度の格子定数を持つ
+             結晶中に1$\mathrm{\AA}$程度のポテンシャルが並んでいる状況を想定している。}
+         \end{minipage}&
+        \begin{minipage}[t]{0.45\hsize}
+            \centering
+            \includegraphics[width=70truemm]{figure_1.png}
+            \caption{拡大した判別式}
+            \label{BZ2}\footnotesize{\leftline{%
+            青い塗りつぶしは$\pm 1$の領域を表す}}
+        \end{minipage}
+    \end{tabular}
+    \end{figure}
+    \section{Hunagelの超拡散}
+    通常の波束の緩和は標準偏差が\eref{SD}のように時間の一次関数で増大していく。
+    しかし、周期ポテンシャルに入れた波束は違った振る舞いをする。\par
+    Hunagelは量子が一点から拡散する状況\footnote{波束ではない}を、格子点に局在している量子が隣の格子に放射されるというtight-bindingモデルによって近似した。
+    粒子の飛び移り確率は、格子にいる量子を確率の点源(point source)とみなし、
+    それから指数関数的に放出されるというpoint-sourceモデルに基づいて与えられた。\\
+    その結果、\eref{MPS}のように分散が拡大していくとした。
+    \begin{align}
+    P(t) &= \mathrm{e}^{-\Gamma t}\label{source}\\
+    M_{PS}(t)&=\int_{0}^{\infty}\:dx\:x^2\int_{0}^{t}\:dt'(-\dot{P}(t'))\delta(x-v(t-t'))\label{variant}\\
+    M_{PS}(t)&=v^2\Gamma\int_{0}^{t}\:dt'\mathrm{e}^{-\Gamma t}(t-t')^2\nonumber\\
+    M_{PS}(t)&=v^2\left(t^2-\frac{2}{\Gamma}t+\frac{2}{\Gamma^2}-\frac{2}{\Gamma^2}\mathrm{e}^{-\Gamma t} \right)\label{MPS}
+    \end{align}
+    \eref{MPS}を見ると、$t/\Gamma \ll 1$の状況でかっこ内の第一項以外が消えるため、
+    分散が$t$の2乗に比例して増加していくことを説明できる。\\
+    また、\eref{MPS}の指数因子を展開すると\eref{MPS2}の形になる。
+    \begin{align}
+    M_{PS}(t)=v^2\Gamma\left(\frac{1}{3}t^3-\frac{\Gamma}{12}t^4\right)
+    \end{align)
+        
     \chapter{結果}
     \chapter{考察}
     \chapter{schrpyについて}
