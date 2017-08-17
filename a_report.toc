@@ -13,7 +13,7 @@
 \contentsline {section}{\numberline {3.1}Blochの定理とKronig-Pennyモデルの定常解}{15}
 \contentsline {subsection}{\numberline {3.1.1}Blochの定理}{15}
 \contentsline {subsection}{\numberline {3.1.2}Kronig-Pennyモデルの定常解}{17}
-\contentsline {section}{\numberline {3.2}HunagelとZhangの超拡散}{20}
+\contentsline {section}{\numberline {3.2}HunagelとZhangのHeyperdiffusion}{20}
 \contentsline {chapter}{\numberline {第4章}結果}{22}
 \contentsline {chapter}{\numberline {第5章}考察}{23}
-\contentsline {chapter}{\numberline {第6章}schrpyについて}{24}
+\contentsline {chapter}{\numberline {第6章}QuantumSketchBookについて}{24}

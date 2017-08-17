@@ -843,13 +843,20 @@
         \end{minipage}
     \end{tabular}
     \end{figure}
-    \section{HunagelとZhangの超拡散}
+    \begin{itembox}[l]{Blochの定理とKronig-Pennyモデルについてのまとめ}
+        \begin{itemize}
+            \item ハミルトニアンに並進対称性を課すとBlochの定理が成立する
+            \item Kronig-Pennyモデルの定常解はエネルギー状態に制限がある
+            \item Kronig-Pennyモデルの具体的なエネルギーバンド領域を求めることは難しい
+        \end{itemize}
+    \end{itembox}
+    \section{HunagelとZhangのHeyperdiffusion}
     通常の波束の緩和は標準偏差が\eref{SD}のように時間の一次関数で増大していく。
     しかし、周期ポテンシャルに入れた波束は違った振る舞いをする。\par
     Hunagelは量子が一点から拡散する状況\footnote{波束ではない}を、格子点に局在している量子が隣の格子に放射されるというtight-bindingモデルによって近似した。
     粒子の飛び移り確率は、格子にいる量子を確率の点源(point source)とみなし、
     それから指数関数的に放出されていくというpoint-sourceモデルに基づいて与えられた。\\
-    その結果、\eref{MPS}のように分散が拡大していくとした。
+    その結果、\eref{MPS}のように分散$M_{PS}$が拡大していくとした。
     \begin{align}
     P(t) &= \mathrm{e}^{-\Gamma t}\label{source}\\
     M_{PS}(t)&=\int_{0}^{\infty}\:dx\:x^2\int_{0}^{t}\:dt'(-\dot{P}(t'))\delta(x-v(t-t'))\label{variant}\\
@@ -861,18 +868,43 @@
     \footnote{\eref{source}の形を$P(t)=1-\Gamma t$にすると、分散が完全に$t$の2乗に比例するようになる。}\par
     Hunagelは$t$の2乗に比例しない因子をHeyperballisticな拡散と呼んだ。
     パラメータ$\Gamma$は時間のスケール因子であり、$\Gamma$を変えることによって様々な時間スケールにモデルを当てはめることができる。
-    Zhangはこのモデルをtight-bindingなKronig-Pennyモデルに当てはめ、波束の緩和を計算した。
+    ZhangはこのモデルをKronig-Pennyモデルに当てはめ、波束の緩和を計算した。
     その結果、Kronig-Pennyモデルについても\fref{Zhang}のように、
-    分散が時間の2乗に乗らない拡散が見られ、ZhangはこれをHeyperdiffusionと呼んだ。
+    分散が時間の2乗に乗らない拡散が見られ、ZhangはこれをHeyperdiffusionと呼んだ。\par
     \begin{figure}[h]
       \centering
       \includegraphics[width=70truemm]{figure_3.png}
-      \caption{ZhangによるHeyperdiffusionの計算結果}
+      \caption{Zhang PhysRevLett.108(2012)より}
       \label{Zhang}
       \footnotesize{横軸は時間、縦軸は分散を表している。
       上から順にポテンシャルが強くなった場合の結果を示している。}
     \end{figure}
+    Zhangの計算はpoint-souece近似を使っていないが、Heyperballisticな拡散が起こっている。
+    よって、point-source近似は必ずしもHeyperballisticな拡散に必須の条件ではないことがわかる。\par
+    Zhangはこれについて、Heyperdiffusionが起こる状況では、ポテンシャルと空白との間を行き来できるような固有状態が豊富にあるため、
+    この固有状態に関連があるのではないかと考察している。
+    \begin{itembox}[l]{HunagelとZhangのHeyperdiffusionについてのまとめ}
+        \begin{itemize}
+            \item point-source近似を行うと、ある時間スケールで特異な拡散の挙動が見られる
+            \item Kronig-Pennyモデルの数値計算で類似の状況が予言されている
+            \item Heyperdiffusionには固有状態が影響しているかもしれない
+        \end{itemize}
+    \end{itembox}
     \chapter{結果}
+    汎用のコンピュータ言語であるpython3でパッケージQuantumSketchBookを作成し、数値計算を行った。
+    QuantumSketchBookは一体のSchrödinger方程式の解を取得、描画、
+    ハミルトニアンの固有関数と固有値の取得、
+    Nelsonの確率力学に基づいた標本過程の生成を行うことができるパッケージである。
+    生成できる画像の例として、以下のサンプルを提示する。
+    \begin{align}
+    4.0 y_{0} - 54.0 y_{1} + 540.0 y_{2} - 980.0 y_{3} + 540.0 y_{4} - 54.0 y_{5} + 4.0 y_{6} \\
+    3.4286 y_{0} - 50.0 y_{1} + 528.0 y_{2} - 960.0 y_{3} + 520.0 y_{4} - 42.0 y_{5} + 0.57143 y_{6} \\
+    - 0.5 y_{0} - 24.0 y_{1} + 455.625 y_{2} - 851.42 y_{3} + 427.5 y_{4} - 7.25 y_{5} + 0.053571 y_{6} \\
+    - 40.156 y_{0} + 210.93 y_{1} - 109.71 y_{2} - 160.0 y_{3} + 100.5 y_{4} - 1.5773 y_{5} + 0.011029 y_{6} \\
+    - 82.265 y_{0} + 302.01 y_{1} - 246.85 y_{2} + 5.7142 y_{3} + 21.696 y_{4} - 0.29911 y_{5} + 0.0019441 y_{6} \\
+    - 70.109 y_{0} + 144.51 y_{1} - 84.0 y_{2} + 4.4132 y_{3} + 5.25 y_{4} - 0.070565 y_{5} + 0.0004526 y_{6} \\
+     \end{align}
+    
     \chapter{考察}
-    \chapter{schrpyについて}
+    \chapter{QuantumSketchBookについて}
 \end{document}
