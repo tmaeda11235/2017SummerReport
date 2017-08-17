@@ -121,7 +121,7 @@
     簡単な構造ながらエネルギーバンド構造を説明することができる点で有効であり、Kronig-Pennyモデルと呼ばれる。\par
     また、定常状態についての構造は古くから知られているKronig-Pennyポテンシャルだが、
     非定常状態はBlochの定理が成立しないため、波動関数が\eref{BlochTheorem}で表されることはない。
-    これに関しては、Hunagel、ZenjunによってGauss型波束の緩和についての研究\footnote{
+    これに関しては、Hunagel、Zenjunによって確率供給源からの量子拡散についての研究\footnote{
       Zhanのポテンシャルは$x=0$付近だけ井戸の間隔が広くなっている
     }が行われている。
     この結果、波束の標準偏差が時間に比例するよりも早く大きくなる現象が見出され、Heyperdiffusionが起こることを示した。\par
@@ -716,7 +716,8 @@
     \end{align}
     この式が成立するためには、$A',B',C',D'$が0になるか、行列部分の行列式が0になるかのどちらかとなる。
     前者には物理的意味が乏しいので、後者を求めることにする。
-    地道に計算すれば求めることができるが、中でも比較的手順が少なく、意味をとりやすい方法として、$2\times2$の行列式に余因子展開する方法を紹介する。\par
+    地道に計算すれば求めることができるが、中でも比較的手順が少なく、意味をとりやすい方法として、
+    $2\times2$の行列式に余因子展開する方法を紹介する。\par
     まず、煩雑を避けるために以下の置き換えをする。
     \begin{align}
     \mathrm{e}^{ik_Ab}&=A^+\nonumber\\
@@ -737,7 +738,8 @@
     A^{+\sim}A^{-\sim}&=\mathrm{e}^{-2iKd}\nonumber\\
     B^\pm B^\pm &= \mathrm{e}^{\pm 2ik_Bb}
     \end{align}
-    置き換えを施した行列式を$A^+A^{+\sim}A^-A^{-\sim}$に依存する部分と$B^+B^-$に依存する部分に分けながら余因子展開すると以下のようになる。
+    置き換えを施した行列式を$A^+A^{+\sim}A^-A^{-\sim}$に依存する部分と
+    $B^+B^-$に依存する部分に分けながら余因子展開すると以下のようになる。
     \begin{align}
     \begin{Vmatrix}
     A^+&A^-&-B^+&-B^-\\
@@ -841,12 +843,12 @@
         \end{minipage}
     \end{tabular}
     \end{figure}
-    \section{Hunagelの超拡散}
+    \section{HunagelとZhangの超拡散}
     通常の波束の緩和は標準偏差が\eref{SD}のように時間の一次関数で増大していく。
     しかし、周期ポテンシャルに入れた波束は違った振る舞いをする。\par
     Hunagelは量子が一点から拡散する状況\footnote{波束ではない}を、格子点に局在している量子が隣の格子に放射されるというtight-bindingモデルによって近似した。
     粒子の飛び移り確率は、格子にいる量子を確率の点源(point source)とみなし、
-    それから指数関数的に放出されるというpoint-sourceモデルに基づいて与えられた。\\
+    それから指数関数的に放出されていくというpoint-sourceモデルに基づいて与えられた。\\
     その結果、\eref{MPS}のように分散が拡大していくとした。
     \begin{align}
     P(t) &= \mathrm{e}^{-\Gamma t}\label{source}\\
@@ -855,12 +857,21 @@
     M_{PS}(t)&=v^2\left(t^2-\frac{2}{\Gamma}t+\frac{2}{\Gamma^2}-\frac{2}{\Gamma^2}\mathrm{e}^{-\Gamma t} \right)\label{MPS}
     \end{align}
     \eref{MPS}を見ると、$t/\Gamma \ll 1$の状況でかっこ内の第一項以外が消えるため、
-    分散が$t$の2乗に比例して増加していくことを説明できる。\\
-    また、\eref{MPS}の指数因子を展開すると\eref{MPS2}の形になる。
-    \begin{align}
-    M_{PS}(t)=v^2\Gamma\left(\frac{1}{3}t^3-\frac{\Gamma}{12}t^4\right)
-    \end{align)
-        
+    分散が$t$の2乗に比例して増加していくことを説明できる。
+    \footnote{\eref{source}の形を$P(t)=1-\Gamma t$にすると、分散が完全に$t$の2乗に比例するようになる。}\par
+    Hunagelは$t$の2乗に比例しない因子をHeyperballisticな拡散と呼んだ。
+    パラメータ$\Gamma$は時間のスケール因子であり、$\Gamma$を変えることによって様々な時間スケールにモデルを当てはめることができる。
+    Zhangはこのモデルをtight-bindingなKronig-Pennyモデルに当てはめ、波束の緩和を計算した。
+    その結果、Kronig-Pennyモデルについても\fref{Zhang}のように、
+    分散が時間の2乗に乗らない拡散が見られ、ZhangはこれをHeyperdiffusionと呼んだ。
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=70truemm]{figure_3.png}
+      \caption{ZhangによるHeyperdiffusionの計算結果}
+      \label{Zhang}
+      \footnotesize{横軸は時間、縦軸は分散を表している。
+      上から順にポテンシャルが強くなった場合の結果を示している。}
+    \end{figure}
     \chapter{結果}
     \chapter{考察}
     \chapter{schrpyについて}
