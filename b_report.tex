@@ -843,20 +843,13 @@
         \end{minipage}
     \end{tabular}
     \end{figure}
-    \begin{itembox}[l]{Blochの定理とKronig-Pennyモデルについてのまとめ}
-        \begin{itemize}
-            \item ハミルトニアンに並進対称性を課すとBlochの定理が成立する
-            \item Kronig-Pennyモデルの定常解はエネルギー状態に制限がある
-            \item Kronig-Pennyモデルの具体的なエネルギーバンド領域を求めることは難しい
-        \end{itemize}
-    \end{itembox}
-    \section{HunagelとZhangのHeyperdiffusion}
+    \section{HunagelとZhangの超拡散}
     通常の波束の緩和は標準偏差が\eref{SD}のように時間の一次関数で増大していく。
     しかし、周期ポテンシャルに入れた波束は違った振る舞いをする。\par
     Hunagelは量子が一点から拡散する状況\footnote{波束ではない}を、格子点に局在している量子が隣の格子に放射されるというtight-bindingモデルによって近似した。
     粒子の飛び移り確率は、格子にいる量子を確率の点源(point source)とみなし、
     それから指数関数的に放出されていくというpoint-sourceモデルに基づいて与えられた。\\
-    その結果、\eref{MPS}のように分散$M_{PS}$が拡大していくとした。
+    その結果、\eref{MPS}のように分散が拡大していくとした。
     \begin{align}
     P(t) &= \mathrm{e}^{-\Gamma t}\label{source}\\
     M_{PS}(t)&=\int_{0}^{\infty}\:dx\:x^2\int_{0}^{t}\:dt'(-\dot{P}(t'))\delta(x-v(t-t'))\label{variant}\\
@@ -868,37 +861,21 @@
     \footnote{\eref{source}の形を$P(t)=1-\Gamma t$にすると、分散が完全に$t$の2乗に比例するようになる。}\par
     Hunagelは$t$の2乗に比例しない因子をHeyperballisticな拡散と呼んだ。
     パラメータ$\Gamma$は時間のスケール因子であり、$\Gamma$を変えることによって様々な時間スケールにモデルを当てはめることができる。
-    ZhangはこのモデルをKronig-Pennyモデルに当てはめ、波束の緩和を計算した。
+    Zhangはこのモデルをtight-bindingなKronig-Pennyモデルに当てはめ、波束の緩和を計算した。
     その結果、Kronig-Pennyモデルについても\fref{Zhang}のように、
-    分散が時間の2乗に乗らない拡散が見られ、ZhangはこれをHeyperdiffusionと呼んだ。\par
+    分散が時間の2乗に乗らない拡散が見られ、ZhangはこれをHeyperdiffusionと呼んだ。
     \begin{figure}[h]
       \centering
       \includegraphics[width=70truemm]{figure_3.png}
-      \caption{Zhang PhysRevLett.108(2012)より}
+      \caption{ZhangによるHeyperdiffusionの計算結果}
       \label{Zhang}
       \footnotesize{横軸は時間、縦軸は分散を表している。
       上から順にポテンシャルが強くなった場合の結果を示している。}
     \end{figure}
-    Zhangの計算はpoint-souece近似を使っていないが、Heyperballisticな拡散が起こっている。
-    よって、point-source近似は必ずしもHeyperballisticな拡散に必須の条件ではないことがわかる。\par
-    Zhangはこれについて、Heyperdiffusionが起こる状況では、ポテンシャルと空白との間を行き来できるような固有状態が豊富にあるため、
-    この固有状態に関連があるのではないかと考察している。
-    \begin{itembox}[l]{HunagelとZhangのHeyperdiffusionについてのまとめ}
-        \begin{itemize}
-            \item point-source近似を行うと、ある時間スケールで特異な拡散の挙動が見られる
-            \item Kronig-Pennyモデルの数値計算で類似の状況が予言されている
-            \item Heyperdiffusionには固有状態が影響しているかもしれない
-        \end{itemize}
-    \end{itembox}
     \chapter{結果}
-    \section{二枚の壁の場合}
-    Kronig-Pennyポテンシャルの簡単な場合として、二枚の壁がある構造を作り、Schrödinger方程式を数値的に計算した。\par
-    ポテンシャルの設定はエネルギーを5、井戸と壁の幅は1に\footnote{
-      すべて原子単位系を採用している。
-    }設定し、波束のパラメータは標準偏差1.5で波数は3のものを入射した。
-    QuantumSketchBookのよる計算の結果、\fref{plt}を得た。
+    Kronig-Pennyポテンシャルの簡単な場合として、二枚の壁がある構造を作り、Schrödinger方程式を数値的に計算した。
+    その結果、\fref{plt}を得た。
     \begin{figure}[h]
-      \centering
       \includegraphics[width=70truemm]{figure_4.png}
       \caption{確率の時空間分布}
       \label{plt}
@@ -906,151 +883,18 @@
     この結果から、一度壁に侵入した粒子は反射波と透過波に分かれるが、その後も透過反射を繰り返し、
     二次的、三次的な波が井戸から放出され続けていることがわかる。
     そのため、直接反射波と二次、三時反射波の間には時間間隔が存在している。\par
-    また、壁の中央からもう一方の壁の中央までの範囲に粒子が存在する確率を計算したところ、\fref{center1}を得た。\par
+    また、壁の中央からもう一方の壁の中央までの範囲に粒子が存在する確率を計算したところ、\fref{center1}を得た。
     \begin{figure}[h]
-      \centering
       \includegraphics[width=70truemm]{figure_5.png}
-      \caption{井戸付近にいる確率のt=10までの時間推移}
+      \caption{井戸付近にいる確率の時間推移}
       \label{center1}
     \end{figure}
-    波束が侵入したt=2付近から、直線的に確率が減少していることがわかる。
-    この結果から、井戸中央付近に存在している確率は指数関数的に減少していくことが推測される。\par
+    波束が侵入した
+    この結果から、井戸中央付近に存在している確率は指数関数的に減少していくことがわかる。
     Hunagelによるpoint-source近似の結果がZhangのHeyperdiffusionにも現れた原因として、
     Kronig-Pennyポテンシャルの井戸部分がpoint-sourceと同様の働きを示したことが考えられる。\par
     しかし、長時間の計算を行ったところ異なる傾向が見られるようになった。\par
     それを以下の\fref{center2}に示す。
-    \begin{figure}
-      \centering
-      \includegraphics[width=70truemm]{figure_7.png}
-      \caption{井戸付近にいる確率のt=100までの時間推移}
-      \label{center2}
-    \end{figure}
-    t=20頃から傾きが変化していることがわかる。\par
-    この原因として、井戸内の波動関数の振動モードが変化したことが挙げられる。
-    t=100までの時空間分布は\fref{doubleWell}のようになるが、
-    t=10付近では井戸内の波動は両壁付近と井戸中心部の参加箇所に腹が見られる。
-    しかし、t=20付近から井戸中心部の波動が消滅し、壁付近に局在している。\par
-    振動のモードとしてエネルギーが低い状態に落ち込んだため、ポテンシャルの透過確率が低下したと考えられる。
-    \begin{figure}
-      \centering
-      \includegraphics[width=70truemm]{Double-well.png}
-      \caption{t=100までの確率の時空分布}
-      \label{doubleWell}
-    \end{figure}
-    \begin{itembox}[l]{2枚の壁の場合のまとめ}
-      \begin{itemize}
-        \item 反射波は直接のものだけでなく、二次的、三次的な波も現れる
-        \item 井戸周辺の存在確率は指数関数的に減少する
-        \item 減少の指数は時間によって変化する
-        \item 井戸内のモードが関連している可能性がある
-      \end{itemize}
-    \end{itembox}
-    \section{Kronig-Pennyポテンシャル}
-    真空中からKronig-Pennyポテンシャルに入射する場合も同様に計算を行ったところ、\fref{KPfig}を得た。
-    \begin{figure}
-      \centering
-      \includegraphics[width=70truemm]{figure_9.png}
-      \caption{Kronig-Pennyポテンシャルにおける確率の時空間分布}
-      \label{KPfig}
-    \end{figure}
-      真空中への反射波は直接反射以外にも、時間的遅れが生じた後、二次反射波や三次反射波が放出されている様子が見える。\par
-      また、Kronig-Pennyポテンシャルに侵入している波は時空間上で複数のすじ状に分布している。\par
-      この現象は、すべての壁を透過した波が1本目のすじに、2回反射した波が2本目のすじになるといったように、
-      反射回数によって波が分離されることによって現れると考えられる。
-      2枚の壁の場合に問題となった振動のモードは、壁の付近が腹になるモードが主で、
-      確率密度が薄くなった1本目のすじの後半付近には壁が節になるモードが現れた。\par
-      \begin{itembox}[l]{Kronig-Pennyポテンシャルのまとめ}
-        \begin{itemize}
-          \item　2枚の壁と同様に反射波には高次のものが現れる
-          \item 透過波に時空間上ですじのようなものが現れる
-        \end{itemize}
-      \end{itembox}
-    \chapter{QuantumSketchBookについて}
-    汎用のコンピュータ言語であるpython3でパッケージQuantumSketchBookを作成し、数値計算を行った。
-    QuantumSketchBookは一体のSchrödinger方程式の解を取得、描画、
-    ハミルトニアンの固有関数と固有値の取得、
-    Nelsonの確率力学に基づいた標本過程の生成を行うことができるパッケージである。
-    生成できる画像の例として、サンプル\fref{sample}を提示する。
-    \begin{figure}
-      \centering
-      \includegraphics[width=70truemm]{nelson_test.png}
-      \caption{サンプル}
-      \label{sample}
-    \end{figure}
-      この画像は四次ポテンシャルにGauss型波束を置いた場合の時間発展を計算したもので、
-      この分布を元にNelsonの確率過程の標本過程を計算することができる。\par
-      その結果を以下のサンプル\fref{locus}で示す。\par
-    \begin{figure}
-      \centering
-      \includegraphics[width=70truemm]{locus_0002.png}
-      \caption{サンプル}
-      \label{locus}
-      \footnotesize{
-        確率密度が高い部分を黒い影として透過させている。
-      }
-    \end{figure}
-    抽象化されたメソッドをつかうため、このような複雑な計算を簡単な入力で計算することができる。\par
-    QuantumSketchBookは主に三種類の部品から作られている。\par
-    一つがSketchBookで、データの保持、他の部品との連携を行う部品である。
-    初心者はこの部品とのやり取りで量子力学の数値計算をこなすことができるようになっている。
-    使い方はpythonのコード内に\\\\
-    \texttt{import \: QuantumSketchBook \: as QSB\\
-            my\_mesh\:=\:QSB.Mesh("位置の最小値、最大値、刻み、時間の最小値、最大値、刻み")\\
-            sb\:=\:QSB.SketchBook(mesh)}\\\\
-    と入力する。\par
-    これにより、\texttt{mesh}の引数を定義域として、様々なデータを格納する準備が整う。
-    初期条件として、デフォルトで$x=0$を中心としたGauss型波束が格納されている。
-    ポテンシャルはデフォルトで$0$の自由粒子状態が格納されている。\par
-    ふたつ目の部品であるPotentialやStateを定義し、SketchBookに渡すことで
-    ポテンシャルや初期条件を設定することができる。\\\\
-    \texttt{
-      my\_potential\:=\:QSB.Potential(mesh\:"位置の関数または各位置のポテンシャルを格納した配列")\\
-      sb.set\_potential(my\_potential)\\\\
-      my\_state\:=\:QSB.State(mesh,\:"位置の関数または各位置の波動関数を格納した配列")\\
-      sb.set\_state(my\_state)\\
-    }\\
-    よく使われるポテンシャルとして、
-    \begin{itemize}
-    \item \texttt{StepPotential()}\: :ステップ型ポテンシャル
-    \item \texttt{BoxPotential()}\: :箱型ポテンシャル
-    \item \texttt{KPPotential()}\: : Kronig-Pennyポテンシャル
-    \item \texttt{UsKPPotential()}\: :右側だけKronig-Pennyポテンシャル
-    \end{itemize}
-    が標準で用意されている。\par
-    また、よく使われる初期条件として\texttt{GaussianState}が用意されている。\par
-    これらの設定ができたら、実際にSchrödinger方程式を解き始められる。\\\\
-    \texttt{
-      import \:QuantumSketchBook\:as\:QSB\\
-      my\_mesh\:=\:QSB.Mesh(-10,\:10,\:0.05,\:0,\:15,\:0.05)\\
-      sb\:=\:QSB.SketchBook(mesh)\\\\
-      my\_potential\:=\:QSB.StepPotential(mesh,\:5,\:0)\\
-      sb.set\_potential(my\_potential)\\\\
-      my\_state\:=\:QSB.GaussianState(mesh,\:-5,\:3,\:3)\\
-      sb.set\_state(my\_state)\\\\
-      sb.solve\_schrodinger\_equation()\\
-    }\\
-    最後の一行で具体的な計算が始まる。\par
-    解は\texttt{sb.solution}と入力すれば取り出すことができる。
-    しかしそれだけはなく、QuantumSketchBookでは簡単な可視化機能も備えている。
-    \texttt{sb.easy\_plot2d()}を実行すれば、解の画像を見ることができる。\\
-    \texttt{
-      import \: QuantumSketchBook \: as \: QSB\\
-      my\_mesh\:=\:QSB.Mesh(-10,\:10,\:0.05,\:0,\:15,\:0.05)\\
-      sb\:=\:QSB.SketchBook(mesh)\\\\
-      my\_potential\:=\:QSB.StepPotential(mesh,\:5,\:0)\\
-      sb.set\_potential(my\_potential)\\\\
-      my\_state\:=\:QSB.GaussianState(mesh,\:-5,\:3,\:3)\\
-      sb.set\_state(my\_state)\\\\
-      sb.solve\_schrodinger\_equation()\\
-      sb.easy\_plot2d(save=True,\:title="test")\\
-    }
-    以上のコードを実行すれば、解を可視化した画像\fref{testfig}が得られる。\\
-    \begin{figure}
-      \centering
-      \includegraphics[width=70truemm]{figure_10.png}
-      \caption{テスト}
-      \label{testfig}
-    \end{figure}
-    境界付近で値が不安定になっているが、これは自由端境界条件をつけているためである。\\
-    境界条件は\texttt{sb.solve\_schrodinger\_equation(boundary="free")}といった形で指定できる。
+    \chapter{考察}
+    \chapter{schrpyについて}
 \end{document}
